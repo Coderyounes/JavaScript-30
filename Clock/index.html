@@ -5,14 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Clock</title>
+    <style>
+        .hand {
+            width: 50%;
+            height: 6px;
+            background: black;
+            position: absolute;
+            bottom: 50%;
+            transform-origin: right center;
+            transition: all 0.05s;
+            transition-timing-function: steps(1, end);
+        }
+
+        .hour-hand {
+            height: 4px;
+            width: 30%;
+            right: 50%;
+        }
+
+        .minute-hand {
+            height: 3px;
+            width: 40%;
+            right: 50%;
+        }
+
+        .second-hand {
+            height: 2px;
+            width: 45%;
+            right: 50%;
+        }
+    </style>
 </head>
 
 <body class="flex bg-gradient-to-r from-indigo-500 to-blue-500 justify-center items-center h-screen">
-        <div class="container flex justify-center">
-            <div class="w-60 h-60 rounded-full border-4 border-black bg-inherit"></div>
+    <div class="container flex justify-center">
+        <div class="w-52 min-h-52 rounded-full bg-inherit relative border-black border-4">
+            <div id="hours" class="hand hour-hand"></div>
+            <div id="minutes" class="hand minute-hand"></div>
+            <div id="seconds" class="hand second-hand"></div>
         </div>
-        <script src="/js/app.js"></script>
-    </body>
+    </div>
+    <script src="js/app.js"></script>
+</body>
 
-    </html>
+</html>
